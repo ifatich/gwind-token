@@ -1,0 +1,11 @@
+# Node Module
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Build
+/dist
+/build
+
+pnpm-lock.yaml
