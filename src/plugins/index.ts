@@ -1,0 +1,1 @@
+export {default as gwindTwBase} from './tailwindcss/base'
