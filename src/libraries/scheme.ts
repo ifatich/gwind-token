@@ -55,28 +55,10 @@ const METRICS = {
     },
 
     screens: {
-        mobile: {
-            breakpoint: "var(--mobile-breakpoint)",
-            columns: "var(--mobile-columns)",
-            gutter: "var(--mobile-gutter)",
-            margin: "var(--mobile-margin)",
-        },
-  
-        tablet: {
-            breakpoint: "var(--tablet-breakpoint)",
-            columns: "var(--tablet-columns)",
-            gutter: "var(--tablet-gutter)",
-            margin: "var(--tablet-margin)",
-        },
-
-        laptop: {
-            breakpoint: "var(--desktop-breakpoint)",
-            columns: "var(--desktop-columns)",
-            gutter: "var(--desktop-gutter)",
-            margin: "var(--desktop-margin)",
-        },
-
-        "xs": "321px"
+        "xl": "300px",
+        "mobile": "320px",
+        "tablet": "760px",
+        "laptop": "1024px",
     },
     keyframes: {
         "accordion-down": {
