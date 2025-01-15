@@ -7,5 +7,9 @@ node_modules
 
 # Build
 /build
+build
+
+/dist
+dist
 
 pnpm-lock.yaml
