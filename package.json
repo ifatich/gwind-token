@@ -5,6 +5,10 @@
     "keywords": [],
     "author": "PT Pegadaian",
     "license": "proprietary",
+    "repository": {
+        "type": "git",
+        "url": "https://repo.pegadaian.co.id/ui-component/web/gwind/gwind.git"
+    },
     "scripts": {
         "build": "node scripts/build.js",
         "build:ts": "node scripts/build.js build:ts",
