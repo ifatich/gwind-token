@@ -33,7 +33,7 @@ install dependencies:
 build package:
   stage: build
   script:
-    - pnpm run build-only
+    - pnpm run build
   artifacts:
     name: "$CI_COMMIT_REF_SLUG"
     paths:
