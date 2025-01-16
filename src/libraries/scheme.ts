@@ -56,9 +56,9 @@ const METRICS = {
 
     screens: {
         "xl": "300px",
-        "mobile": "320px",
-        "tablet": "760px",
-        "laptop": "1024px",
+        "mobile": "22.5rem",
+        "tablet": "48rem",
+        "desktop": "90rem",
     },
     keyframes: {
         "accordion-down": {
