@@ -1,6 +1,6 @@
 {
-    "name": "@pegadaian/gwind",
-    "version": "1.0.0",
+    "name": "gwind",
+    "version": "1.0.01",
     "description": "A design token library developed specifically for internal applications of PT Pegadaian. Provides reusable design values such as colors, typography, and themes for a consistent UI experience across Pegadaian's platforms.",
     "keywords": [],
     "author": "PT Pegadaian",
