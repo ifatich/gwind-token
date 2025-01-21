@@ -50,12 +50,12 @@ const COLORS = {
 const METRICS = {
     borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)"
+        md: "calc(var(--radius) - 0.125rem)",
+        sm: "calc(var(--radius) - 0.25rem)"
     },
 
     screens: {
-        "xl": "300px",
+        "sm": "18,75rem",
         "mobile": "22.5rem",
         "tablet": "48rem",
         "desktop": "90rem",
