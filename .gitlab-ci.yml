@@ -48,9 +48,9 @@ build package:
 publish to nexus:
   stage: publish
   script:
-    - echo "@pegadaian:registry=https://artifactory.pegadaian.co.id/repository/npm-hosted-01/" > .npmrc
+    - echo "registry=$NPM_REGISTRY_URL" > .npmrc
     - echo "//artifactory.pegadaian.co.id/repository/npm-hosted-01/:_auth=$NPM_AUTH_TOKEN" >> .npmrc
-    - pnpm publish --no-git-checks
+    - npm publish --userconfig .npmrc
   only:
     - master
     - tags
