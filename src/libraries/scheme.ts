@@ -53,12 +53,11 @@ const METRICS = {
         md: "calc(var(--radius) - 0.125rem)",
         sm: "calc(var(--radius) - 0.25rem)"
     },
-
     screens: {
         "sm": "18,75rem",
         "mobile": "22.5rem",
-        "tablet": "48rem",
-        "desktop": "90rem",
+        "tablet": "40rem",
+        "desktop": "64.25rem",
     },
     keyframes: {
         "accordion-down": {
@@ -94,8 +93,17 @@ const METRICS = {
 }
 
 const CONTAINER = {
-    center: true,
-    padding: "2rem",
+    center: false,
+    padding: {
+        mobile: '1rem',
+        tablet: '2rem',
+        desktop: '9.75rem',
+    },
+    maxWidth: {
+        mobile: '100%',
+        tablet: '640px',
+        desktop: '1028px',
+    }
 }
 
 const FONT_FAMILY = {
