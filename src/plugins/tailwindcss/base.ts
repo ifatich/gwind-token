@@ -171,7 +171,7 @@ const gwindTwBase = plugin(({addBase}) => {
             '--ring': 'var(--primary)',
             '--radius': '0.5rem',
 
-            '--elevation-1': [ '0px 0px 0.125rem rgba(0, 0, 0, 0.08)', '0px 0.125rem 0.375rem rgba(0, 0, 0, 0.14)' ],
+            '--elevation-1': 'drop-shadow(0px 0px 0.125rem rgba(0, 0, 0, 0.08)) drop-shadow(0px 0.125rem 0.375rem rgba(0, 0, 0, 0.14))',
             '--elevation-2': 'drop-shadow(0px 0px 0.25rem rgba(0, 0, 0, 0.10)) drop-shadow(0px 0.375rem 0.875rem rgba(0, 0, 0, 0.16))',
 
             '--mobile-breakpoint': '22.5rem',

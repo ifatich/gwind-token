@@ -20,7 +20,7 @@ const COLORS = {
     },
     secondary: {
         DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
-        foreground: "hsl(var(--secondary-foreground) / <alpha-value>)"
+        foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
     },
     destructive: {
         DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
@@ -51,10 +51,19 @@ const METRICS = {
     borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 0.125rem)",
-        sm: "calc(var(--radius) - 0.25rem)"
+        sm: "calc(var(--radius) - 0.25rem)",
+
+        none: 'var(--border-radius-none)',
+        small: 'var(--border-radius-small)',
+        medium: 'var(--border-radius-medium)',
+        large: 'var(--border-radius-large)',
+        full: 'var(--border-radius-full)',
+
+        'x-small': 'var(--border-radius-x-small)',
+        'x-large': 'var(--border-radius-x-large)',
     },
     screens: {
-        "sm": "18,75rem",
+        "sm": "18.75rem",
         "mobile": "22.5rem",
         "tablet": "40rem",
         "desktop": "64.25rem",
@@ -107,7 +116,7 @@ const CONTAINER = {
 }
 
 const FONT_FAMILY = {
-    sans: 'Nunito Sans, sans-serif',
+    nunito: ['Nunito', 'sans-serif'],
 }
 
 const SPACE_TOKENS = {
@@ -123,23 +132,58 @@ const SPACE_TOKENS = {
         64: "var(--space-64)",
         80: "var(--space-80)",
         120: "var(--space-120)"
+    },
+
+    spacing: {
+        'spacing-2': 'var(--spacing-2)',
+        'spacing-4': 'var(--spacing-4)',
+        'spacing-8': 'var(--spacing-8)',
+        'spacing-12': 'var(--spacing-12)',
+        'spacing-16': 'var(--spacing-16)',
+        'spacing-24': 'var(--spacing-24)',
+        'spacing-32': 'var(--spacing-32)',
+        'spacing-40': 'var(--spacing-40)',
+        'spacing-48': 'var(--spacing-48)',
+        'spacing-56': 'var(--spacing-56)',
+        'spacing-64': 'var(--spacing-64)',
+        'spacing-72': 'var(--spacing-72)',
+        'spacing-80': 'var(--spacing-80)'
     }
 };
 
-const GWIND_SHADOWS = {
+const TRING_SHADOWS = {
     dropShadow: {
         '1': [ '0px 0px 2px rgba(0, 0, 0, 0.08)', '0px 2px 6px rgba(0, 0, 0, 0.14)' ],
         '2': [ '0px 0px 4px rgba(0, 0, 0, 0.10)', '0px 6px 14px rgba(0, 0, 0, 0.16)' ],
     }
 };
 
-const gwindScheme = {
+const HEADING = {
+    h1: {
+        fontSize: "var(--text-headline-size-extra-large)",
+        lineHeight: "var(--text-headline-lineheight-extra-large)",
+        fontWeight: "var(--font-weight-bold)"
+    },
+    h2: {
+        fontSize: "var(--text-headline-size-large)",
+        lineHeight: "var(--text-headline-lineheight-large)",
+        fontWeight: "var(--font-weight-bold)"
+    },
+    h3: {
+        fontSize: "var(--text-headline-size-medium)",
+        lineHeight: "var(--text-headline-lineheight-medium)",
+        fontWeight: "var(--font-weight-bold)"
+    }
+};
+
+const tringScheme = {
     COLORS,
     METRICS,
     CONTAINER,
     FONT_FAMILY,
     SPACE_TOKENS,
-    GWIND_SHADOWS
+    TRING_SHADOWS,
+    HEADING
 }
 
-export default gwindScheme
+export default tringScheme
