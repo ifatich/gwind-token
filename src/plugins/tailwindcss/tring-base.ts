@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 import tringScheme from "../../tring/scheme";
 import tringTheme from "../../tring/theme";
 
-const tringTwBase  = plugin(({addBase}) => {
+const tringTwBase: ReturnType<typeof plugin> = plugin(({addBase}) => {
     addBase({
         'body':{
             fontFamily: tringScheme.FONT_FAMILY.nunito,

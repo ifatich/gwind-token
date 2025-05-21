@@ -1,11 +1,9 @@
 import plugin from "tailwindcss/plugin";
-import gwindScheme from "../../libraries/scheme";
 import gwindTheme from "../../libraries/theme";
 
-const gwindTwBase = plugin(({addBase}) => {
+const gwindTwBase: ReturnType<typeof plugin> = plugin(({addBase}) => {
     addBase({
         'body':{
-            fontFamily: gwindScheme.FONT_FAMILY.sans,
             fontWeight: gwindTheme.fontWeight.regular
         },
         ':root': {

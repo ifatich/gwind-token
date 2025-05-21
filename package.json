@@ -17,13 +17,13 @@
         "deprecate": "npm deprecate @pegadaian/gwind@1.0.1-4.1 'this package has been deprecated'"
     },
     "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.7",
         "@types/node": "^22.10.5",
         "autoprefixer": "^10.4.20",
         "clean-publish": "^5.1.0",
         "license-generator": "^0.0.13",
-        "postcss": "^8.4.49",
         "sass": "^1.83.0",
-        "tailwindcss": "^3.4.17",
+        "tailwindcss": "^4.1.7",
         "typescript": "^5.7.2"
     },
     "main": "dist/index.js",

@@ -15,7 +15,6 @@ const gwindTheme = {
         ...gwindScheme.METRICS,
         ...gwindScheme.SPACE_TOKENS,
         ...gwindScheme.GWIND_SHADOWS,
-        ...gwindScheme.FONT_FAMILY,
     },
 }
 
