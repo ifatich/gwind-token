@@ -1,9 +1,6 @@
-const fs = require("fs")
-
-module.exports = {
-    plugins: {
-        "postcss-import": {},
-        "tailwindcss": {},
-        "autoprefixer": {},
-    }
-}
+export default {
+  plugins: {
+    "postcss-import": {},
+    "@tailwindcss/postcss": {},
+  },
+};

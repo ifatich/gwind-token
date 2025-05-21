@@ -6,7 +6,7 @@ const {execSync} = require('child_process');
 const commands = {
     'build:license': 'node scripts/update-license.js',
     'build:ts': 'npx tsc',
-    'build:css': 'npx tailwindcss -i src/styles/styles.css -o ./dist/styles/base.css',
+    'build:css': 'npx @tailwindcss/cli -i src/styles/styles.css -o ./dist/styles/base.css',
 };
 const args = process.argv.slice(2);
 const allCommand = args.length === 0 || args.includes('build')

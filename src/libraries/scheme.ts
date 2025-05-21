@@ -106,10 +106,6 @@ const CONTAINER = {
     }
 }
 
-const FONT_FAMILY = {
-    sans: 'Nunito Sans, sans-serif',
-}
-
 const SPACE_TOKENS = {
     space: {
         2: "var(--space-2)",
@@ -137,7 +133,6 @@ const gwindScheme = {
     COLORS,
     METRICS,
     CONTAINER,
-    FONT_FAMILY,
     SPACE_TOKENS,
     GWIND_SHADOWS
 }

@@ -30,4 +30,4 @@ const postcssGwind = () => {
 
 postcssGwind.postcss = true
 
-export = postcssGwind
+export default postcssGwind
