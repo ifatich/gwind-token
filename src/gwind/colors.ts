@@ -1,110 +1,110 @@
 const gwindThemeColors = {
     broccoli: {
-        90: "hsl(var(--broccoli-90)  / <alpha-value>)",
-        80: "hsl(var(--broccoli-80)  / <alpha-value>)",
-        60: "hsl(var(--broccoli-60)  / <alpha-value>)",
-        50: "hsl(var(--broccoli-50)  / <alpha-value>)",
-        40: "hsl(var(--broccoli-40)  / <alpha-value>)",
-        20: "hsl(var(--broccoli-20)  / <alpha-value>)",
-        10: "hsl(var(--broccoli-10)  / <alpha-value>)"
+        900: "hsl(var(--broccoli-900)  / <alpha-value>)",
+        800: "hsl(var(--broccoli-800)  / <alpha-value>)",
+        600: "hsl(var(--broccoli-600)  / <alpha-value>)",
+        500: "hsl(var(--broccoli-500)  / <alpha-value>)",
+        400: "hsl(var(--broccoli-400)  / <alpha-value>)",
+        200: "hsl(var(--broccoli-200)  / <alpha-value>)",
+        100: "hsl(var(--broccoli-100)  / <alpha-value>)"
     },
     lime: {
-        90: "hsl(var(--lime-90)  / <alpha-value>)",
-        80: "hsl(var(--lime-80)  / <alpha-value>)",
-        60: "hsl(var(--lime-60)  / <alpha-value>)",
-        50: "hsl(var(--lime-50)  / <alpha-value>)",
-        40: "hsl(var(--lime-40)  / <alpha-value>)",
-        20: "hsl(var(--lime-20)  / <alpha-value>)",
-        10: "hsl(var(--lime-10)  / <alpha-value>)"
+        900: "hsl(var(--lime-900)  / <alpha-value>)",
+        800: "hsl(var(--lime-800)  / <alpha-value>)",
+        600: "hsl(var(--lime-600)  / <alpha-value>)",
+        500: "hsl(var(--lime-500)  / <alpha-value>)",
+        400: "hsl(var(--lime-400)  / <alpha-value>)",
+        200: "hsl(var(--lime-200)  / <alpha-value>)",
+        100: "hsl(var(--lime-100)  / <alpha-value>)"
     },
     pear: {
-        90: "hsl(var(--pear-90)  / <alpha-value>)",
-        80: "hsl(var(--pear-80)  / <alpha-value>)",
-        60: "hsl(var(--pear-60)  / <alpha-value>)",
-        50: "hsl(var(--pear-50)  / <alpha-value>)",
-        40: "hsl(var(--pear-40)  / <alpha-value>)",
-        20: "hsl(var(--pear-20)  / <alpha-value>)",
-        10: "hsl(var(--pear-10)  / <alpha-value>)"
+        900: "hsl(var(--pear-900)  / <alpha-value>)",
+        800: "hsl(var(--pear-800)  / <alpha-value>)",
+        600: "hsl(var(--pear-600)  / <alpha-value>)",
+        500: "hsl(var(--pear-500)  / <alpha-value>)",
+        400: "hsl(var(--pear-400)  / <alpha-value>)",
+        200: "hsl(var(--pear-200)  / <alpha-value>)",
+        100: "hsl(var(--pear-100)  / <alpha-value>)"
     },
     kiwi: {
-        90: "hsl(var(--kiwi-90)  / <alpha-value>)",
-        80: "hsl(var(--kiwi-80)  / <alpha-value>)",
-        60: "hsl(var(--kiwi-60)  / <alpha-value>)",
-        50: "hsl(var(--kiwi-50)  / <alpha-value>)",
-        40: "hsl(var(--kiwi-40)  / <alpha-value>)",
-        20: "hsl(var(--kiwi-20)  / <alpha-value>)",
-        10: "hsl(var(--kiwi-10)  / <alpha-value>)"
+        900: "hsl(var(--kiwi-900)  / <alpha-value>)",
+        800: "hsl(var(--kiwi-800)  / <alpha-value>)",
+        600: "hsl(var(--kiwi-600)  / <alpha-value>)",
+        500: "hsl(var(--kiwi-500)  / <alpha-value>)",
+        400: "hsl(var(--kiwi-400)  / <alpha-value>)",
+        200: "hsl(var(--kiwi-200)  / <alpha-value>)",
+        100: "hsl(var(--kiwi-100)  / <alpha-value>)"
     },
     red: {
-        90: "hsl(var(--red-90)  / <alpha-value>)",
-        80: "hsl(var(--red-80)  / <alpha-value>)",
-        60: "hsl(var(--red-60)  / <alpha-value>)",
-        50: "hsl(var(--red-50)  / <alpha-value>)",
-        40: "hsl(var(--red-40)  / <alpha-value>)",
-        20: "hsl(var(--red-20)  / <alpha-value>)",
-        10: "hsl(var(--red-10)  / <alpha-value>)"
+        900: "hsl(var(--red-900)  / <alpha-value>)",
+        800: "hsl(var(--red-800)  / <alpha-value>)",
+        600: "hsl(var(--red-600)  / <alpha-value>)",
+        500: "hsl(var(--red-500)  / <alpha-value>)",
+        400: "hsl(var(--red-400)  / <alpha-value>)",
+        200: "hsl(var(--red-200)  / <alpha-value>)",
+        100: "hsl(var(--red-100)  / <alpha-value>)"
     },
     orange: {
-        90: "hsl(var(--orange-90)  / <alpha-value>)",
-        80: "hsl(var(--orange-80)  / <alpha-value>)",
-        60: "hsl(var(--orange-60)  / <alpha-value>)",
-        50: "hsl(var(--orange-50)  / <alpha-value>)",
-        40: "hsl(var(--orange-40)  / <alpha-value>)",
-        20: "hsl(var(--orange-20)  / <alpha-value>)",
-        10: "hsl(var(--orange-10)  / <alpha-value>)"
+        900: "hsl(var(--orange-900)  / <alpha-value>)",
+        800: "hsl(var(--orange-800)  / <alpha-value>)",
+        600: "hsl(var(--orange-600)  / <alpha-value>)",
+        500: "hsl(var(--orange-500)  / <alpha-value>)",
+        400: "hsl(var(--orange-400)  / <alpha-value>)",
+        200: "hsl(var(--orange-200)  / <alpha-value>)",
+        100: "hsl(var(--orange-100)  / <alpha-value>)"
     },
     yellow: {
-        90: "hsl(var(--yellow-90)  / <alpha-value>)",
-        80: "hsl(var(--yellow-80)  / <alpha-value>)",
-        60: "hsl(var(--yellow-60)  / <alpha-value>)",
-        50: "hsl(var(--yellow-50)  / <alpha-value>)",
-        40: "hsl(var(--yellow-40)  / <alpha-value>)",
-        20: "hsl(var(--yellow-20)  / <alpha-value>)",
-        10: "hsl(var(--yellow-10)  / <alpha-value>)"
+        900: "hsl(var(--yellow-900)  / <alpha-value>)",
+        800: "hsl(var(--yellow-800)  / <alpha-value>)",
+        600: "hsl(var(--yellow-600)  / <alpha-value>)",
+        500: "hsl(var(--yellow-500)  / <alpha-value>)",
+        400: "hsl(var(--yellow-400)  / <alpha-value>)",
+        200: "hsl(var(--yellow-200)  / <alpha-value>)",
+        100: "hsl(var(--yellow-100)  / <alpha-value>)"
     },
     gold: {
-        90: "hsl(var(--gold-90)  / <alpha-value>)",
-        80: "hsl(var(--gold-80)  / <alpha-value>)",
-        60: "hsl(var(--gold-60)  / <alpha-value>)",
-        50: "hsl(var(--gold-50)  / <alpha-value>)",
-        40: "hsl(var(--gold-40)  / <alpha-value>)",
-        20: "hsl(var(--gold-20)  / <alpha-value>)",
-        10: "hsl(var(--gold-10)  / <alpha-value>)"
+        900: "hsl(var(--gold-900)  / <alpha-value>)",
+        800: "hsl(var(--gold-800)  / <alpha-value>)",
+        600: "hsl(var(--gold-600)  / <alpha-value>)",
+        500: "hsl(var(--gold-500)  / <alpha-value>)",
+        400: "hsl(var(--gold-400)  / <alpha-value>)",
+        200: "hsl(var(--gold-200)  / <alpha-value>)",
+        100: "hsl(var(--gold-100)  / <alpha-value>)"
     },
     turquoise: {
-        90: "hsl(var(--turquoise-90)  / <alpha-value>)",
-        80: "hsl(var(--turquoise-80)  / <alpha-value>)",
-        60: "hsl(var(--turquoise-60)  / <alpha-value>)",
-        50: "hsl(var(--turquoise-50)  / <alpha-value>)",
-        40: "hsl(var(--turquoise-40)  / <alpha-value>)",
-        20: "hsl(var(--turquoise-20)  / <alpha-value>)",
-        10: "hsl(var(--turquoise-10)  / <alpha-value>)"
+        900: "hsl(var(--turquoise-900)  / <alpha-value>)",
+        800: "hsl(var(--turquoise-800)  / <alpha-value>)",
+        600: "hsl(var(--turquoise-600)  / <alpha-value>)",
+        500: "hsl(var(--turquoise-500)  / <alpha-value>)",
+        400: "hsl(var(--turquoise-400)  / <alpha-value>)",
+        200: "hsl(var(--turquoise-200)  / <alpha-value>)",
+        100: "hsl(var(--turquoise-100)  / <alpha-value>)"
     },
     blue: {
-        90: "hsl(var(--blue-90)  / <alpha-value>)",
-        80: "hsl(var(--blue-80)  / <alpha-value>)",
-        60: "hsl(var(--blue-60)  / <alpha-value>)",
-        50: "hsl(var(--blue-50)  / <alpha-value>)",
-        40: "hsl(var(--blue-40)  / <alpha-value>)",
-        20: "hsl(var(--blue-20)  / <alpha-value>)",
-        10: "hsl(var(--blue-10)  / <alpha-value>)"
+        900: "hsl(var(--blue-900)  / <alpha-value>)",
+        800: "hsl(var(--blue-800)  / <alpha-value>)",
+        600: "hsl(var(--blue-600)  / <alpha-value>)",
+        500: "hsl(var(--blue-500)  / <alpha-value>)",
+        400: "hsl(var(--blue-400)  / <alpha-value>)",
+        200: "hsl(var(--blue-200)  / <alpha-value>)",
+        100: "hsl(var(--blue-100)  / <alpha-value>)"
     },
     purple: {
-        90: "hsl(var(--purple-90)  / <alpha-value>)",
-        80: "hsl(var(--purple-80)  / <alpha-value>)",
-        60: "hsl(var(--purple-60)  / <alpha-value>)",
-        50: "hsl(var(--purple-50)  / <alpha-value>)",
-        40: "hsl(var(--purple-40)  / <alpha-value>)",
-        20: "hsl(var(--purple-20)  / <alpha-value>)",
-        10: "hsl(var(--purple-10)  / <alpha-value>)"
+        900: "hsl(var(--purple-900)  / <alpha-value>)",
+        800: "hsl(var(--purple-800)  / <alpha-value>)",
+        600: "hsl(var(--purple-600)  / <alpha-value>)",
+        500: "hsl(var(--purple-500)  / <alpha-value>)",
+        400: "hsl(var(--purple-400)  / <alpha-value>)",
+        200: "hsl(var(--purple-200)  / <alpha-value>)",
+        100: "hsl(var(--purple-100)  / <alpha-value>)"
     },
     black: {
-        80: "hsl(var(--black-80)  / <alpha-value>)",
-        60: "hsl(var(--black-60)  / <alpha-value>)",
-        50: "hsl(var(--black-50)  / <alpha-value>)",
-        40: "hsl(var(--black-40)  / <alpha-value>)",
-        20: "hsl(var(--black-20)  / <alpha-value>)",
-        10: "hsl(var(--black-10)  / <alpha-value>)"
+        800: "hsl(var(--black-800)  / <alpha-value>)",
+        600: "hsl(var(--black-600)  / <alpha-value>)",
+        500: "hsl(var(--black-500)  / <alpha-value>)",
+        400: "hsl(var(--black-400)  / <alpha-value>)",
+        200: "hsl(var(--black-200)  / <alpha-value>)",
+        100: "hsl(var(--black-100)  / <alpha-value>)"
     },
     white: "hsl(var(--text-white)  / <alpha-value>)"
 }
