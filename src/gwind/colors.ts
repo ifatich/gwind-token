@@ -106,7 +106,9 @@ const gwindThemeColors = {
         200: "hsl(var(--black-200)  / <alpha-value>)",
         100: "hsl(var(--black-100)  / <alpha-value>)"
     },
-    white: "hsl(var(--text-white)  / <alpha-value>)"
+    white: "hsl(var(--text-white)  / <alpha-value>)",
+    Gwind_UI : "PT Pegadaian",
+    Design_System_By: "Pegadaian Design © 2025 || F Imam Al A"
 }
 
 export default gwindThemeColors

@@ -2,7 +2,6 @@ import gwindScheme from "./scheme";
 import gwindFontSizes from "./font-sizes";
 import gwindColors from "./colors";
 
-
 const gwindTheme = {
     container: gwindScheme.CONTAINER,
     fontSize: gwindFontSizes.SIZES,
