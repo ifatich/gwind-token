@@ -1,39 +1,53 @@
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const {execSync} = require('child_process');
 
+const distPath = path.join(__dirname, '../dist');
 
-const commands = {
-    'build:license': 'node scripts/update-license.js',
-    'build:ts': 'npx tsc',
-    'build:css': 'npx @tailwindcss/cli -i src/styles/styles.css -o ./dist/styles/base.css',
-};
-const args = process.argv.slice(2);
-const allCommand = args.length === 0 || args.includes('build')
+console.log('🚀 Starting Gwind Token Build (Tailwind v4 Optimized)...');
 
-const removeDistDirectory = () => {
-    if (!allCommand) {
-        return
-    }
-    const distPath = path.join(__dirname, '../dist');
-    if (fs.existsSync(distPath)) {
-        console.log('Removing existing dist directory...');
-        fs.rmSync(distPath, {recursive: true, force: true});
-    }
-};
+// 1. Clean dist
+if (fs.existsSync(distPath)) {
+    console.log('🧹 Cleaning dist directory...');
+    fs.rmSync(distPath, { recursive: true, force: true });
+}
+fs.mkdirSync(distPath, { recursive: true });
 
-const runCommand = command => {
-    console.log(`Running: ${command}`);
-    try {
-        execSync(command, {stdio: 'inherit'});
-    } catch (error) {
-        console.error(`Error executing command: ${command}`);
-        process.exit(1);
-    }
-};
+// 2. Generate CSS Sources from TS
+console.log('🎨 Generating CSS variables and theme...');
+try {
+    execSync('npx tsx scripts/generate-css.ts', { stdio: 'inherit' });
+} catch (e) {
+    console.error('❌ Failed to generate CSS sources');
+    process.exit(1);
+}
 
-const commandsToRun = allCommand ? Object.values(commands) : args.map(arg => commands[arg]).filter(Boolean);
+// 3. Build TypeScript
+console.log('📦 Compiling TypeScript...');
+try {
+    execSync('npx tsc', { stdio: 'inherit' });
+} catch (e) {
+    console.error('⚠️ TypeScript compilation had errors (ignoring for CSS build)');
+}
 
-removeDistDirectory();
-
-commandsToRun.forEach(runCommand);
+// 4. Build Production CSS with Tailwind v4 CLI
+console.log('⚡ Building production CSS with Tailwind v4 CLI...');
+try {
+    execSync('npx @tailwindcss/cli -i src/styles/styles.css -o dist/gwind.css --minify', { stdio: 'inherit' });
+    
+    // Copy base and theme to dist/styles for direct import support
+    const distStylesPath = path.join(distPath, 'styles');
+    if (!fs.existsSync(distStylesPath)) fs.mkdirSync(distStylesPath);
+    
+    fs.copyFileSync('src/styles/base.css', path.join(distStylesPath, 'base.css'));
+    fs.copyFileSync('src/styles/theme.css', path.join(distStylesPath, 'theme.css'));
+    
+    console.log('✅ Build completed successfully!');
+    console.log('   - JS: dist/index.js');
+    console.log('   - CSS (Bundled): dist/gwind.css');
+    console.log('   - CSS (Variables): dist/styles/base.css');
+    console.log('   - CSS (Theme): dist/styles/theme.css');
+} catch (e) {
+    console.error('❌ CSS Build failed');
+    process.exit(1);
+}

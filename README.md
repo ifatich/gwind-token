@@ -1,147 +1,73 @@
-# Gwind - Pegadaian Design System
+# gwind-token (Design Tokens)
 
-## Tentang Gwind
-Gwind adalah design token berbasis pada Tailwind yang mendukung pengembangan proyek Digital pada Pegadaian. Design Token ini menggunakan teknologi:
-- **Tailwind CSS**: Library CSS.
-- **Sass**: Preprocessor CSS untuk mempermudah styling.
+Design token berbasis Tailwind CSS v4 untuk ekosistem aplikasi PT Pegadaian. Library ini menyediakan nilai desain yang konsisten seperti warna, tipografi, dan tema yang dioptimalkan untuk performa tinggi dan kemudahan integrasi.
 
-Gwind bertujuan menyediakan solusi desain yang konsisten dan efisien, mendukung pengembangan aplikasi Pegadaian dengan standar desain modern.
+## Fitur Utama
+- **Tailwind CSS v4 Native**: Menggunakan engine Oxide terbaru tanpa ketergantungan PostCSS.
+- **Micro Frontend Ready**: Ekspor variabel CSS murni untuk konsumsi runtime antar aplikasi.
+- **shadcn/ui Compatible**: Penamaan token selaras dengan standar industri.
 
 ---
 
-## Getting started
+## Getting Started
 
 ### Instalasi
-Pastikan Anda sudah menginstal *prerequisite* berikut:
-- **Node.js**: Versi 18 atau lebih baru.
-- **npm**: Versi 8 atau lebih baru.
-atau Anda bisa menggunakan
-- **pnpm**: Versi 9 atau lebih baru.
 
 ```bash
-npm config set registry https://artifactory.pegadaian.co.id/repository/npm-group-1/
+npm install gwind-token -D
+# atau
+pnpm add gwind-token -D
 ```
 
-Setelah berhasil Anda bisa langsung instalasi dengan cara : 
+### Penggunaan (Tailwind v4)
 
-```bash
-npm install @pegadaian/gwind -D
+Pada Tailwind v4, Anda cukup mengimpor file CSS yang disediakan langsung ke dalam entry point CSS Anda:
 
+```css
+/* app.css */
+@import "tailwindcss";
+@import "gwind-token/gwind.css";
 ```
 
-## Langkah Konfigurasi untuk Proyek Vue
+Atau jika Anda hanya ingin mengimpor variabel CSS dan memetakan tema sendiri:
 
-### Konfigurasi tailwind.config.js
+```css
+@import "tailwindcss";
+@import "gwind-token/base.css";
+@import "gwind-token/theme.css";
+```
 
-```bash
-import { gwindTwBase, gwindTheme } from "@pegadaian/gwind";  
-  
-const config = {  
-  content: ['./public/index.html', './index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],  
-  darkMode: 'class',  
-  theme: {  
+### Penggunaan (Legacy / Tailwind v3)
+
+Jika Anda masih menggunakan `tailwind.config.js`:
+
+```javascript
+import { gwindTheme } from "gwind-token";
+
+export default {
+  theme: {
     ...gwindTheme
-  },  
-  plugins: [gwindTwBase],  
-};
-
-export default config;  
+  }
+}
 ```
-
-### Perhatikan pada baris kode dibawah
-```bash
-  theme: {  
-    ...gwindTheme
-  },  
-  plugins: [gwindTwBase]
-```
-
-## Struktur Branch untuk Pengembangan Gwind
-- `master`: Branch yang berisi versi stabil dari Gwind. Branch ini digunakan untuk merilis package ke Artifactory Pegadaian.
-- `dev/gwind`: Branch pengembangan utama. Semua fitur baru atau perbaikan akan di-review di branch ini sebelum di-merge ke master.
-
-## Cara Berkontribusi pada Gwind
-Kami sangat mengapresiasi kontribusi dari developer lain untuk menambahkan komponen baru, memperbaiki styling, atau memperbaiki bug pada komponen yang ada.
-
-### Langkah-Langkah Kontribusi
-
-1. **Fork dan Clone Repository**
-   - Fork repository `Gwind` ke akun git kamu.
-   - Clone repository fork kamu:
-     ```bash
-     git clone https://repo.pegadaian.co.id/client/pegadaian-ui-kit-vue.git
-
-     cd gwind
-     ```
-
-2. **Checkout Branch Pengembangan**
-   - Pastikan kamu selalu bekerja dari branch pengembangan, `dev/gwind`:
-     ```bash
-     git checkout dev/gwind
-     ```
-
-3. **Buat Branch Baru dari `dev/gwind`**
-   - **Untuk Penambahan Design Token Baru:**
-     - Buat branch baru dengan penamaan `dev/gwind/add-(nama-token)`:
-     - Contoh jika kamu melakukan penambahan komponen button : 
-       ```bash
-       git checkout -b dev/gwind/add-radius-token
-       ```
-
-   - **Untuk Update atau Bug Fixing Token yang Ada:**
-     - Buat branch baru dengan penamaan `dev/gwind/update-(nama-token)`:
-     - Contoh jika kamu melakukan penambahan komponen button : 
-       ```bash
-       git checkout -b dev/gwind/update-radius-token
-       ```
-
-4. **Mulai Pengembangan**
-   - **Penambahan Design Token Baru:**
-     - Tambahkan komponen baru sesuai dengan standar kode yang telah disepakati.
-     - Pastikan untuk menulis komentar dan menambahkan dokumentasi yang relevan.
-  
-   - **Update atau Bug Fixing:**
-     - Perbaiki bug atau update styling komponen yang ada.
-     - Tambahkan komentar untuk memastikan perubahan tersebut.
-
-5. **Commit dan Push**
-   - Buat commit yang jelas dan deskriptif:
-     ```bash
-     git commit -m "Add Design Token radius (sm, md, lg, xl, and 2xl)"
-     git push origin dev-add-button
-     ```
-
-6. **Buka Merge Request (MR)**
-   - Setelah selesai, buka Merge Request ke branch `dev/gwind`.
-   - Tambahkan deskripsi lengkap mengenai perubahan dan penambahan yang kamu lakukan.
-
-7. **Code Review**
-   - Merge Request kamu akan di-review oleh maintainer proyek dari **Pegadaian Design**.
-   - Jika ada catatan, lakukan perbaikan berdasarkan umpan balik yang diberikan.
-
-8. **Merge ke `dev/gwind`**
-   - Setelah review selesai, request akan di-merge ke `gwind`.
-
-# Penting Diperhatikan 
-### Penamaan Branch
-
-- **Penambahan Komponen Baru:**
-  - Branch name: `dev/gwind/add-(nama-token)`
-  - Contoh: `dev/gwind/add-radius-token`, `dev/gwind/add-container-token`
-
-- **Perbaikan atau Update Komponen yang Ada:**
-  - Branch name: `dev/gwind/update-(nama-token)`
-  - Contoh: `dev/gwind/update-radius-token`, `dev/gwind/update-container-token`
-
-### Praktik Terbaik
-
-- **Coding Style:** Ikuti pedoman coding style yang ada dalam proyek ini.
-- **Test:** Selalu tambahkan atau perbarui unit tests untuk memastikan kode yang kamu tambahkan atau ubah berfungsi dengan baik.
-- **Dokumentasi:** Jangan lupa untuk menambahkan atau memperbarui dokumentasi jika kamu menambahkan fitur baru atau mengubah yang sudah ada.
-- **Jaga Kualitas:** Semua kode harus melalui proses review dan testing sebelum di-merge ke branch `gwind`.
 
 ---
 
-Terima kasih telah berkontribusi ke `Gwind!` Kami sangat menghargai usaha dan waktu yang kamu luangkan untuk membuat proyek ini menjadi lebih baik.
+## Pengembangan
+
+### Build
+Untuk melakukan build ulang token (menghasilkan JS dan CSS):
+```bash
+npm run build
+```
+
+### Struktur Output
+- `dist/index.js`: Logic JS dan konfigurasi tema (CommonJS).
+- `dist/gwind.css`: Bundle CSS lengkap (Tailwind v4 native).
+- `dist/styles/base.css`: Definisi variabel CSS (`:root`).
+- `dist/styles/theme.css`: Pemetaan `@theme` untuk Tailwind v4.
+
+---
+
 ### ♡ Pegadaian Design ♡
-### Love 🫰, Regard 🤝 and Cheers 🍻 
+### Love 🫰, Regard 🤝 and Cheers 🍻

@@ -1,36 +1,30 @@
 {
-    "name": "@pegadaian/gwind",
-    "version": "1.0.02-4",
-    "description": "A design token library developed specifically for internal applications of PT Pegadaian. Provides reusable design values such as colors, typography, and themes for a consistent UI experience across Pegadaian's platforms.",
+    "name": "gwind-token",
+    "version": "0.1.0",
+    "description": "Gwind Design Tokens - Optimized for Tailwind CSS v4",
     "author": "Fatich Imam Al Arasy",
-    "keywords": [],
     "license": "proprietary",
-    "repository": {
-        "type": "git",
-        "url": "https://repo.pegadaian.co.id/ui-component/web/gwind/gwind.git"
-    },
+    "type": "commonjs",
     "scripts": {
         "build": "node scripts/build.js",
-        "build:ts": "node scripts/build.js build:ts",
-        "build:license": "node scripts/build.js build:license",
-        "build:css": "node scripts/build.js build:css",
-        "deprecate": "npm deprecate @pegadaian/gwind@1.0.1-4.1 'this package has been deprecated'"
+        "build:css": "npx tsx scripts/generate-css.ts && npx @tailwindcss/cli -i src/styles/styles.css -o dist/gwind.css --minify",
+        "build:ts": "npx tsc",
+        "dev": "npx tsx scripts/generate-css.ts --watch"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.7",
         "@types/node": "^22.10.5",
-        "autoprefixer": "^10.4.20",
-        "clean-publish": "^5.1.0",
-        "license-generator": "^0.0.13",
-        "sass": "^1.83.0",
         "tailwindcss": "^4.1.7",
+        "@tailwindcss/cli": "^4.1.7",
+        "tsx": "^4.21.0",
         "typescript": "^5.7.2"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
         ".": "./dist/index.js",
-        "./postcss": "./dist/plugins/postcss.js"
+        "./gwind.css": "./dist/gwind.css",
+        "./base.css": "./dist/styles/base.css",
+        "./theme.css": "./dist/styles/theme.css"
     },
     "files": [
         "dist",
