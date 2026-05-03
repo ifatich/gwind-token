@@ -1,7 +1,7 @@
 {
-    "name": "gwind-token",
-    "version": "0.1.0",
-    "description": "Gwind Design Tokens - Optimized for Tailwind CSS v4",
+    "name": "gwind-v2",
+    "version": "0.1.1",
+    "description": "Gwind Design Tokens v2 - Optimized for Tailwind CSS v4",
     "author": "Fatich Imam Al Arasy",
     "license": "proprietary",
     "type": "commonjs",

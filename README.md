@@ -1,4 +1,4 @@
-# gwind-token (Design Tokens)
+# gwind-v2 (Design Tokens)
 
 Design token berbasis Tailwind CSS v4 untuk ekosistem aplikasi PT Pegadaian. Library ini menyediakan nilai desain yang konsisten seperti warna, tipografi, dan tema yang dioptimalkan untuk performa tinggi dan kemudahan integrasi.
 
@@ -14,9 +14,9 @@ Design token berbasis Tailwind CSS v4 untuk ekosistem aplikasi PT Pegadaian. Lib
 ### Instalasi
 
 ```bash
-npm install gwind-token -D
+npm install gwind-v2 -D
 # atau
-pnpm add gwind-token -D
+pnpm add gwind-v2 -D
 ```
 
 ### Penggunaan (Tailwind v4)
@@ -26,15 +26,15 @@ Pada Tailwind v4, Anda cukup mengimpor file CSS yang disediakan langsung ke dala
 ```css
 /* app.css */
 @import "tailwindcss";
-@import "gwind-token/gwind.css";
+@import "gwind-v2/gwind.css";
 ```
 
 Atau jika Anda hanya ingin mengimpor variabel CSS dan memetakan tema sendiri:
 
 ```css
 @import "tailwindcss";
-@import "gwind-token/base.css";
-@import "gwind-token/theme.css";
+@import "gwind-v2/base.css";
+@import "gwind-v2/theme.css";
 ```
 
 ### Penggunaan (Legacy / Tailwind v3)
@@ -42,7 +42,7 @@ Atau jika Anda hanya ingin mengimpor variabel CSS dan memetakan tema sendiri:
 Jika Anda masih menggunakan `tailwind.config.js`:
 
 ```javascript
-import { gwindTheme } from "gwind-token";
+import { gwindTheme } from "gwind-v2";
 
 export default {
   theme: {
@@ -60,12 +60,6 @@ Untuk melakukan build ulang token (menghasilkan JS dan CSS):
 ```bash
 npm run build
 ```
-
-### Struktur Output
-- `dist/index.js`: Logic JS dan konfigurasi tema (CommonJS).
-- `dist/gwind.css`: Bundle CSS lengkap (Tailwind v4 native).
-- `dist/styles/base.css`: Definisi variabel CSS (`:root`).
-- `dist/styles/theme.css`: Pemetaan `@theme` untuk Tailwind v4.
 
 ---
 
