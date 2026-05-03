@@ -98,9 +98,17 @@
   --accent-foreground: var(--black-800);
   --destructive: var(--red-500);
   --destructive-foreground: var(--white);
+  --success: var(--lime-500);
+  --success-foreground: var(--white);
+  --warning: var(--orange-500);
+  --warning-foreground: var(--white);
   --border: var(--black-200);
   --input: var(--border);
   --ring: var(--primary);
+  --popover: var(--white);
+  --popover-foreground: var(--black-800);
+  --card: var(--white);
+  --card-foreground: var(--black-800);
   --radius: 0.5rem;
 
   /* --- Spacing --- */

@@ -45,9 +45,17 @@ const generateBaseCss = () => {
   --accent-foreground: var(--black-800);
   --destructive: var(--red-500);
   --destructive-foreground: var(--white);
+  --success: var(--lime-500);
+  --success-foreground: var(--white);
+  --warning: var(--orange-500);
+  --warning-foreground: var(--white);
   --border: var(--black-200);
   --input: var(--border);
   --ring: var(--primary);
+  --popover: var(--white);
+  --popover-foreground: var(--black-800);
+  --card: var(--white);
+  --card-foreground: var(--black-800);
   --radius: 0.5rem;
 
   /* --- Spacing --- */
@@ -73,9 +81,17 @@ const generateThemeCss = () => {
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 0.125rem);

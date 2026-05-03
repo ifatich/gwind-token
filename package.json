@@ -7,7 +7,7 @@
     "type": "commonjs",
     "scripts": {
         "build": "node scripts/build.js",
-        "build:css": "npx tsx scripts/generate-css.ts && npx @tailwindcss/cli -i src/styles/styles.css -o dist/gwind.css --minify",
+        "build:css": "npx tsx scripts/generate-css.ts && npx @tailwindcss/cli -i src/styles/styles.css -o dist/gwind.css --minify && mkdir -p dist/styles && cp src/styles/base.css dist/styles/base.css && cp src/styles/theme.css dist/styles/theme.css",
         "build:ts": "npx tsc",
         "dev": "npx tsx scripts/generate-css.ts --watch"
     },
