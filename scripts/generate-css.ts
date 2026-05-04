@@ -103,15 +103,22 @@ const generateThemeCss = () => {
         });
     });
 
-    theme += `\n  --radius-lg: var(--radius);\n`;
+    theme += `  --radius-lg: var(--radius);\n`;
     theme += `  --radius-md: calc(var(--radius) - 0.125rem);\n`;
     theme += `  --radius-sm: calc(var(--radius) - 0.25rem);\n\n`;
 
-    theme += `  --spacing-*: initial;\n`;
-    theme += `  --spacing-2: var(--space-2); --spacing-4: var(--space-4); --spacing-8: var(--space-8);\n`;
-    theme += `  --spacing-16: var(--space-16); --spacing-24: var(--space-24); --spacing-32: var(--space-32);\n`;
-    theme += `  --spacing-40: var(--space-40); --spacing-48: var(--space-48); --spacing-64: var(--space-64);\n`;
-    theme += `  --spacing-80: var(--space-80); --spacing-120: var(--space-120);\n\n`;
+    // Add Gwind custom spacing to the theme while keeping Tailwind defaults
+    theme += `  --spacing-gw-2: var(--space-2);\n`;
+    theme += `  --spacing-gw-4: var(--space-4);\n`;
+    theme += `  --spacing-gw-8: var(--space-8);\n`;
+    theme += `  --spacing-gw-16: var(--space-16);\n`;
+    theme += `  --spacing-gw-24: var(--space-24);\n`;
+    theme += `  --spacing-gw-32: var(--space-32);\n`;
+    theme += `  --spacing-gw-40: var(--space-40);\n`;
+    theme += `  --spacing-gw-48: var(--space-48);\n`;
+    theme += `  --spacing-gw-64: var(--space-64);\n`;
+    theme += `  --spacing-gw-80: var(--space-80);\n`;
+    theme += `  --spacing-gw-120: var(--space-120);\n\n`;
 
     theme += `  --font-size-omega: 12px;\n`;
     theme += `  --font-size-sigma: 14px;\n`;
