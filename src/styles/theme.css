@@ -108,16 +108,21 @@
   --color-black-600: var(--black-600);
   --color-black-800: var(--black-800);
   --color-white: var(--white);
-
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 0.125rem);
   --radius-sm: calc(var(--radius) - 0.25rem);
 
-  --spacing-*: initial;
-  --spacing-2: var(--space-2); --spacing-4: var(--space-4); --spacing-8: var(--space-8);
-  --spacing-16: var(--space-16); --spacing-24: var(--space-24); --spacing-32: var(--space-32);
-  --spacing-40: var(--space-40); --spacing-48: var(--space-48); --spacing-64: var(--space-64);
-  --spacing-80: var(--space-80); --spacing-120: var(--space-120);
+  --spacing-gw-2: var(--space-2);
+  --spacing-gw-4: var(--space-4);
+  --spacing-gw-8: var(--space-8);
+  --spacing-gw-16: var(--space-16);
+  --spacing-gw-24: var(--space-24);
+  --spacing-gw-32: var(--space-32);
+  --spacing-gw-40: var(--space-40);
+  --spacing-gw-48: var(--space-48);
+  --spacing-gw-64: var(--space-64);
+  --spacing-gw-80: var(--space-80);
+  --spacing-gw-120: var(--space-120);
 
   --font-size-omega: 12px;
   --font-size-sigma: 14px;
