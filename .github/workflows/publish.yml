@@ -2,8 +2,11 @@ name: Publish to NPM
 
 on:
   push:
+    branches:
+      - main
     tags:
-      - 'v*' # Memicu workflow saat push tag seperti v0.1.0
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build-and-publish:
@@ -18,13 +21,26 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Run Build
-        run: npm run build
+        run: pnpm run build && pnpm run build:css
 
       - name: Publish to NPM
-        run: npm publish --access public
+        run: |
+          # Only publish if the version doesn't exist on NPM yet
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version > /dev/null 2>&1; then
+            echo "Version $PACKAGE_VERSION already exists on NPM. Skipping publish."
+          else
+            pnpm publish --access public --no-git-checks
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
