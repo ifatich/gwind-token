@@ -67,42 +67,57 @@ const generateBaseCss = () => {
 };
 
 const generateThemeCss = () => {
-    return `@theme {
-  --color-*: initial;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+    let theme = `@theme {\n  --color-*: initial;\n`;
+    
+    // Standard semantic colors
+    theme += `  --color-background: var(--background);\n`;
+    theme += `  --color-foreground: var(--foreground);\n`;
+    theme += `  --color-primary: var(--primary);\n`;
+    theme += `  --color-primary-foreground: var(--primary-foreground);\n`;
+    theme += `  --color-secondary: var(--secondary);\n`;
+    theme += `  --color-secondary-foreground: var(--secondary-foreground);\n`;
+    theme += `  --color-muted: var(--muted);\n`;
+    theme += `  --color-muted-foreground: var(--muted-foreground);\n`;
+    theme += `  --color-accent: var(--accent);\n`;
+    theme += `  --color-accent-foreground: var(--accent-foreground);\n`;
+    theme += `  --color-destructive: var(--destructive);\n`;
+    theme += `  --color-destructive-foreground: var(--destructive-foreground);\n`;
+    theme += `  --color-success: var(--success);\n`;
+    theme += `  --color-success-foreground: var(--success-foreground);\n`;
+    theme += `  --color-warning: var(--warning);\n`;
+    theme += `  --color-warning-foreground: var(--warning-foreground);\n`;
+    theme += `  --color-border: var(--border);\n`;
+    theme += `  --color-input: var(--input);\n`;
+    theme += `  --color-ring: var(--ring);\n`;
+    theme += `  --color-popover: var(--popover);\n`;
+    theme += `  --color-popover-foreground: var(--popover-foreground);\n`;
+    theme += `  --color-card: var(--card);\n`;
+    theme += `  --color-card-foreground: var(--card-foreground);\n\n`;
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 0.125rem);
-  --radius-sm: calc(var(--radius) - 0.25rem);
+    // Map all primitive palette colors
+    Object.entries(primitives).forEach(([color, shades]) => {
+        Object.entries(shades).forEach(([shade, _]) => {
+            const name = shade === 'DEFAULT' ? `--color-${color}` : `--color-${color}-${shade}`;
+            const variable = shade === 'DEFAULT' ? `var(--${color})` : `var(--${color}-${shade})`;
+            theme += `  ${name}: ${variable};\n`;
+        });
+    });
 
-  --spacing-*: initial;
-  --spacing-2: var(--space-2); --spacing-4: var(--space-4); --spacing-8: var(--space-8);
-  --spacing-16: var(--space-16); --spacing-24: var(--space-24); --spacing-32: var(--space-32);
-  --spacing-40: var(--space-40); --spacing-48: var(--space-48); --spacing-64: var(--space-64);
-  --spacing-80: var(--space-80); --spacing-120: var(--space-120);
-}\n`;
+    theme += `\n  --radius-lg: var(--radius);\n`;
+    theme += `  --radius-md: calc(var(--radius) - 0.125rem);\n`;
+    theme += `  --radius-sm: calc(var(--radius) - 0.25rem);\n\n`;
+
+    theme += `  --spacing-*: initial;\n`;
+    theme += `  --spacing-2: var(--space-2); --spacing-4: var(--space-4); --spacing-8: var(--space-8);\n`;
+    theme += `  --spacing-16: var(--space-16); --spacing-24: var(--space-24); --spacing-32: var(--space-32);\n`;
+    theme += `  --spacing-40: var(--space-40); --spacing-48: var(--space-48); --spacing-64: var(--space-64);\n`;
+    theme += `  --spacing-80: var(--space-80); --spacing-120: var(--space-120);\n\n`;
+
+    theme += `  --font-size-omega: 12px;\n`;
+    theme += `  --font-size-sigma: 14px;\n`;
+    theme += `  --font-size-omicron: 16px;\n`;
+    theme += `}\n`;
+    return theme;
 };
 
 if (!fs.existsSync(STYLES_DIR)) fs.mkdirSync(STYLES_DIR, { recursive: true });
