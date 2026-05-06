@@ -120,9 +120,12 @@ const generateThemeCss = () => {
     theme += `  --spacing-gw-80: var(--space-80);\n`;
     theme += `  --spacing-gw-120: var(--space-120);\n\n`;
 
-    theme += `  --font-size-omega: 12px;\n`;
-    theme += `  --font-size-sigma: 14px;\n`;
-    theme += `  --font-size-omicron: 16px;\n`;
+    theme += `  --text-omega: 0.75rem;\n`;
+    theme += `  --text-omega--line-height: calc(1rem / 0.75rem);\n`;
+    theme += `  --text-sigma: 0.875rem;\n`;
+    theme += `  --text-sigma--line-height: calc(1.25rem / 0.875rem);\n`;
+    theme += `  --text-omicron: 1rem;\n`;
+    theme += `  --text-omicron--line-height: calc(1.5rem / 1rem);\n`;
     theme += `}\n`;
     return theme;
 };

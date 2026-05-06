@@ -124,7 +124,10 @@
   --spacing-gw-80: var(--space-80);
   --spacing-gw-120: var(--space-120);
 
-  --font-size-omega: 12px;
-  --font-size-sigma: 14px;
-  --font-size-omicron: 16px;
+  --text-omega: 0.75rem;
+  --text-omega--line-height: calc(1rem / 0.75rem);
+  --text-sigma: 0.875rem;
+  --text-sigma--line-height: calc(1.25rem / 0.875rem);
+  --text-omicron: 1rem;
+  --text-omicron--line-height: calc(1.5rem / 1rem);
 }
