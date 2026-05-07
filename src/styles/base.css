@@ -86,6 +86,7 @@
   --white: hsl(0 0% 100%);
 
   /* --- Semantics --- */
+  --font-family-base: "Nunito Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --background: var(--white);
   --foreground: var(--black-800);
   --primary: var(--lime-500);

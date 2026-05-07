@@ -24,6 +24,12 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
 
+  --font-sans: var(--font-family-base);
+  --font-weight-normal: 600;
+  --font-weight-medium: 600;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+
   --color-broccoli-100: var(--broccoli-100);
   --color-broccoli-200: var(--broccoli-200);
   --color-broccoli-400: var(--broccoli-400);

@@ -33,6 +33,7 @@ const generateBaseCss = () => {
 
     css += `
   /* --- Semantics --- */
+  --font-family-base: "Nunito Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --background: var(--white);
   --foreground: var(--black-800);
   --primary: var(--lime-500);
@@ -93,6 +94,11 @@ const generateThemeCss = () => {
     theme += `  --color-popover-foreground: var(--popover-foreground);\n`;
     theme += `  --color-card: var(--card);\n`;
     theme += `  --color-card-foreground: var(--card-foreground);\n\n`;
+    theme += `  --font-sans: var(--font-family-base);\n`;
+    theme += `  --font-weight-normal: 600;\n`;
+    theme += `  --font-weight-medium: 600;\n`;
+    theme += `  --font-weight-semibold: 700;\n`;
+    theme += `  --font-weight-bold: 800;\n\n`;
 
     // Map all primitive palette colors
     Object.entries(primitives).forEach(([color, shades]) => {
