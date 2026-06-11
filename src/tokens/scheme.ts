@@ -54,7 +54,7 @@ const METRICS = {
         sm: "calc(var(--radius) - 0.25rem)"
     },
     screens: {
-        "sm": "18,75rem",
+        "sm": "18.75rem",
         "mobile": "22.5rem",
         "tablet": "40rem",
         "desktop": "64.25rem",

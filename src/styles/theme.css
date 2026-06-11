@@ -2,8 +2,13 @@
   --color-*: initial;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-primary: var(--foreground-primary);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-tertiary: var(--foreground-tertiary);
+  --color-foreground-green: var(--foreground-green);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-on-text: var(--primary-on-text);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -12,12 +17,14 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-on-text: var(--destructive-on-text);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
+  --color-input-focus: var(--input-focus);
   --color-ring: var(--ring);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
@@ -25,10 +32,11 @@
   --color-card-foreground: var(--card-foreground);
 
   --font-sans: var(--font-family-base);
-  --font-weight-normal: 600;
-  --font-weight-medium: 600;
-  --font-weight-semibold: 700;
-  --font-weight-bold: 800;
+  --font-weight-normal: var(--regular);
+  --font-weight-medium: var(--regular);
+  --font-weight-semibold: var(--regular);
+  --font-weight-bold: var(--bold);
+  --font-weight-extrabold: var(--bold);
 
   --color-broccoli-100: var(--broccoli-100);
   --color-broccoli-200: var(--broccoli-200);
@@ -118,6 +126,11 @@
   --radius-md: calc(var(--radius) - 0.125rem);
   --radius-sm: calc(var(--radius) - 0.25rem);
 
+  --breakpoint-sm: 18.75rem;
+  --breakpoint-mobile: 22.5rem;
+  --breakpoint-tablet: 40rem;
+  --breakpoint-desktop: 64.25rem;
+
   --spacing-gw-2: var(--space-2);
   --spacing-gw-4: var(--space-4);
   --spacing-gw-8: var(--space-8);
@@ -130,10 +143,46 @@
   --spacing-gw-80: var(--space-80);
   --spacing-gw-120: var(--space-120);
 
-  --text-omega: 0.75rem;
-  --text-omega--line-height: calc(1rem / 0.75rem);
-  --text-sigma: 0.875rem;
-  --text-sigma--line-height: calc(1.25rem / 0.875rem);
-  --text-omicron: 1rem;
-  --text-omicron--line-height: calc(1.5rem / 1rem);
+  --text-alpha: var(--72-alpha);
+  --text-alpha--line-height: calc(var(--72-alpha-line-height) / var(--72-alpha));
+  --text-beta: var(--60-beta);
+  --text-beta--line-height: calc(var(--60-beta-line-height) / var(--60-beta));
+  --text-gamma: var(--48-gamma);
+  --text-gamma--line-height: calc(var(--48-gamma-line-height) / var(--48-gamma));
+  --text-delta: var(--36-delta);
+  --text-delta--line-height: calc(var(--36-delta-line-height) / var(--36-delta));
+  --text-epsilon: var(--30-epsilon);
+  --text-epsilon--line-height: calc(var(--30-epsilon-line-height) / var(--30-epsilon));
+  --text-zeta: var(--24-zeta);
+  --text-zeta--line-height: calc(var(--24-zeta-line-height) / var(--24-zeta));
+  --text-kappa: var(--20-kappa);
+  --text-kappa--line-height: calc(var(--20-kappa-line-height) / var(--20-kappa));
+  --text-lambda: var(--18-lambda);
+  --text-lambda--line-height: calc(var(--18-lambda-line-height) / var(--18-lambda));
+  --text-omicron: var(--16-omicron);
+  --text-omicron--line-height: calc(var(--16-omicron-line-height) / var(--16-omicron));
+  --text-sigma: var(--14-sigma);
+  --text-sigma--line-height: calc(var(--14-sigma-line-height) / var(--14-sigma));
+  --text-omega: var(--12-omega);
+  --text-omega--line-height: calc(var(--12-omega-line-height) / var(--12-omega));
+  --text-atom: var(--10-atom);
+  --text-atom--line-height: calc(var(--10-atom-line-height) / var(--10-atom));
+
+  --drop-shadow-1: var(--shadow-drop-1);
+  --drop-shadow-2: var(--shadow-drop-2);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-reverse-spin: reverse-spin 1s linear infinite;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes reverse-spin {
+    from { transform: rotate(360deg); }
+  }
 }

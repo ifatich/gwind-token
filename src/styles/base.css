@@ -87,10 +87,17 @@
 
   /* --- Semantics --- */
   --font-family-base: "Nunito Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --regular: 600;
+  --bold: 800;
   --background: var(--white);
   --foreground: var(--black-800);
+  --foreground-primary: var(--black-800);
+  --foreground-secondary: var(--black-600);
+  --foreground-tertiary: var(--black-500);
+  --foreground-green: var(--lime-500);
   --primary: var(--lime-500);
   --primary-foreground: var(--white);
+  --primary-on-text: var(--lime-500);
   --secondary: var(--black-200);
   --secondary-foreground: var(--black-800);
   --muted: var(--black-200);
@@ -99,21 +106,69 @@
   --accent-foreground: var(--black-800);
   --destructive: var(--red-500);
   --destructive-foreground: var(--white);
+  --destructive-on-text: var(--red-500);
   --success: var(--lime-500);
   --success-foreground: var(--white);
   --warning: var(--orange-500);
   --warning-foreground: var(--white);
   --border: var(--black-200);
   --input: var(--border);
+  --input-focus: var(--lime-500);
   --ring: var(--primary);
   --popover: var(--white);
   --popover-foreground: var(--black-800);
   --card: var(--white);
   --card-foreground: var(--black-800);
+  --text-white: var(--white);
   --radius: 0.5rem;
+  --radix-accordion-content-height: 0px;
 
   /* --- Spacing --- */
-  --space-2: 0.125rem; --space-4: 0.25rem; --space-8: 0.5rem; --space-16: 1rem;
-  --space-24: 1.5rem; --space-32: 2rem; --space-40: 2.5rem; --space-48: 3rem;
-  --space-64: 4rem; --space-80: 5rem; --space-120: 7.5rem;
+  --space-2: 0.125rem;
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-120: 7.5rem;
+
+  /* --- Typography --- */
+  --72-alpha: 4.5rem;
+  --72-alpha-line-height: 6.75rem;
+  --60-beta: 3.75rem;
+  --60-beta-line-height: 5.625rem;
+  --48-gamma: 3rem;
+  --48-gamma-line-height: 4.5rem;
+  --36-delta: 2.25rem;
+  --36-delta-line-height: 3.375rem;
+  --30-epsilon: 1.875rem;
+  --30-epsilon-line-height: 2.8125rem;
+  --24-zeta: 1.5rem;
+  --24-zeta-line-height: 2.25rem;
+  --20-kappa: 1.25rem;
+  --20-kappa-line-height: 1.875rem;
+  --18-lambda: 1.125rem;
+  --18-lambda-line-height: 1.6875rem;
+  --16-omicron: 1rem;
+  --16-omicron-line-height: 1.5rem;
+  --14-sigma: 0.875rem;
+  --14-sigma-line-height: 1.25rem;
+  --12-omega: 0.75rem;
+  --12-omega-line-height: 1.125rem;
+  --10-atom: 0.625rem;
+  --10-atom-line-height: 0.875rem;
+
+  /* --- Layout --- */
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 2rem;
+  --container-padding-desktop: 9.75rem;
+  --container-max-width-mobile: 100%;
+  --container-max-width-tablet: 640px;
+  --container-max-width-desktop: 1028px;
+  --shadow-drop-1: 0px 0px 2px rgba(0, 0, 0, 0.08), 0px 2px 6px rgba(0, 0, 0, 0.14);
+  --shadow-drop-2: 0px 0px 4px rgba(0, 0, 0, 0.10), 0px 6px 14px rgba(0, 0, 0, 0.16);
 }

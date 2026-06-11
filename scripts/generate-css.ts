@@ -21,6 +21,35 @@ const primitives = {
     'white': { DEFAULT: '0 0% 100%' }
 };
 
+const typography = {
+    alpha: { token: '72-alpha', size: '4.5rem', lineHeight: '6.75rem' },
+    beta: { token: '60-beta', size: '3.75rem', lineHeight: '5.625rem' },
+    gamma: { token: '48-gamma', size: '3rem', lineHeight: '4.5rem' },
+    delta: { token: '36-delta', size: '2.25rem', lineHeight: '3.375rem' },
+    epsilon: { token: '30-epsilon', size: '1.875rem', lineHeight: '2.8125rem' },
+    zeta: { token: '24-zeta', size: '1.5rem', lineHeight: '2.25rem' },
+    kappa: { token: '20-kappa', size: '1.25rem', lineHeight: '1.875rem' },
+    lambda: { token: '18-lambda', size: '1.125rem', lineHeight: '1.6875rem' },
+    omicron: { token: '16-omicron', size: '1rem', lineHeight: '1.5rem' },
+    sigma: { token: '14-sigma', size: '0.875rem', lineHeight: '1.25rem' },
+    omega: { token: '12-omega', size: '0.75rem', lineHeight: '1.125rem' },
+    atom: { token: '10-atom', size: '0.625rem', lineHeight: '0.875rem' },
+};
+
+const spacing = {
+    2: '0.125rem',
+    4: '0.25rem',
+    8: '0.5rem',
+    16: '1rem',
+    24: '1.5rem',
+    32: '2rem',
+    40: '2.5rem',
+    48: '3rem',
+    64: '4rem',
+    80: '5rem',
+    120: '7.5rem',
+};
+
 const generateBaseCss = () => {
     let css = '/* Gwind Design System — Generated Variables */\n:root {\n';
     
@@ -34,10 +63,17 @@ const generateBaseCss = () => {
     css += `
   /* --- Semantics --- */
   --font-family-base: "Nunito Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --regular: 600;
+  --bold: 800;
   --background: var(--white);
   --foreground: var(--black-800);
+  --foreground-primary: var(--black-800);
+  --foreground-secondary: var(--black-600);
+  --foreground-tertiary: var(--black-500);
+  --foreground-green: var(--lime-500);
   --primary: var(--lime-500);
   --primary-foreground: var(--white);
+  --primary-on-text: var(--lime-500);
   --secondary: var(--black-200);
   --secondary-foreground: var(--black-800);
   --muted: var(--black-200);
@@ -46,23 +82,49 @@ const generateBaseCss = () => {
   --accent-foreground: var(--black-800);
   --destructive: var(--red-500);
   --destructive-foreground: var(--white);
+  --destructive-on-text: var(--red-500);
   --success: var(--lime-500);
   --success-foreground: var(--white);
   --warning: var(--orange-500);
   --warning-foreground: var(--white);
   --border: var(--black-200);
   --input: var(--border);
+  --input-focus: var(--lime-500);
   --ring: var(--primary);
   --popover: var(--white);
   --popover-foreground: var(--black-800);
   --card: var(--white);
   --card-foreground: var(--black-800);
+  --text-white: var(--white);
   --radius: 0.5rem;
+  --radix-accordion-content-height: 0px;
 
   /* --- Spacing --- */
-  --space-2: 0.125rem; --space-4: 0.25rem; --space-8: 0.5rem; --space-16: 1rem;
-  --space-24: 1.5rem; --space-32: 2rem; --space-40: 2.5rem; --space-48: 3rem;
-  --space-64: 4rem; --space-80: 5rem; --space-120: 7.5rem;
+`;
+
+    Object.entries(spacing).forEach(([name, value]) => {
+        css += `  --space-${name}: ${value};\n`;
+    });
+
+    css += `
+  /* --- Typography --- */
+`;
+
+    Object.values(typography).forEach(({ token, size, lineHeight }) => {
+        css += `  --${token}: ${size};\n`;
+        css += `  --${token}-line-height: ${lineHeight};\n`;
+    });
+
+    css += `
+  /* --- Layout --- */
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 2rem;
+  --container-padding-desktop: 9.75rem;
+  --container-max-width-mobile: 100%;
+  --container-max-width-tablet: 640px;
+  --container-max-width-desktop: 1028px;
+  --shadow-drop-1: 0px 0px 2px rgba(0, 0, 0, 0.08), 0px 2px 6px rgba(0, 0, 0, 0.14);
+  --shadow-drop-2: 0px 0px 4px rgba(0, 0, 0, 0.10), 0px 6px 14px rgba(0, 0, 0, 0.16);
 }\n`;
     return css;
 };
@@ -73,8 +135,13 @@ const generateThemeCss = () => {
     // Standard semantic colors
     theme += `  --color-background: var(--background);\n`;
     theme += `  --color-foreground: var(--foreground);\n`;
+    theme += `  --color-foreground-primary: var(--foreground-primary);\n`;
+    theme += `  --color-foreground-secondary: var(--foreground-secondary);\n`;
+    theme += `  --color-foreground-tertiary: var(--foreground-tertiary);\n`;
+    theme += `  --color-foreground-green: var(--foreground-green);\n`;
     theme += `  --color-primary: var(--primary);\n`;
     theme += `  --color-primary-foreground: var(--primary-foreground);\n`;
+    theme += `  --color-primary-on-text: var(--primary-on-text);\n`;
     theme += `  --color-secondary: var(--secondary);\n`;
     theme += `  --color-secondary-foreground: var(--secondary-foreground);\n`;
     theme += `  --color-muted: var(--muted);\n`;
@@ -83,22 +150,25 @@ const generateThemeCss = () => {
     theme += `  --color-accent-foreground: var(--accent-foreground);\n`;
     theme += `  --color-destructive: var(--destructive);\n`;
     theme += `  --color-destructive-foreground: var(--destructive-foreground);\n`;
+    theme += `  --color-destructive-on-text: var(--destructive-on-text);\n`;
     theme += `  --color-success: var(--success);\n`;
     theme += `  --color-success-foreground: var(--success-foreground);\n`;
     theme += `  --color-warning: var(--warning);\n`;
     theme += `  --color-warning-foreground: var(--warning-foreground);\n`;
     theme += `  --color-border: var(--border);\n`;
     theme += `  --color-input: var(--input);\n`;
+    theme += `  --color-input-focus: var(--input-focus);\n`;
     theme += `  --color-ring: var(--ring);\n`;
     theme += `  --color-popover: var(--popover);\n`;
     theme += `  --color-popover-foreground: var(--popover-foreground);\n`;
     theme += `  --color-card: var(--card);\n`;
     theme += `  --color-card-foreground: var(--card-foreground);\n\n`;
     theme += `  --font-sans: var(--font-family-base);\n`;
-    theme += `  --font-weight-normal: 600;\n`;
-    theme += `  --font-weight-medium: 600;\n`;
-    theme += `  --font-weight-semibold: 700;\n`;
-    theme += `  --font-weight-bold: 800;\n\n`;
+    theme += `  --font-weight-normal: var(--regular);\n`;
+    theme += `  --font-weight-medium: var(--regular);\n`;
+    theme += `  --font-weight-semibold: var(--regular);\n`;
+    theme += `  --font-weight-bold: var(--bold);\n`;
+    theme += `  --font-weight-extrabold: var(--bold);\n\n`;
 
     // Map all primitive palette colors
     Object.entries(primitives).forEach(([color, shades]) => {
@@ -113,25 +183,39 @@ const generateThemeCss = () => {
     theme += `  --radius-md: calc(var(--radius) - 0.125rem);\n`;
     theme += `  --radius-sm: calc(var(--radius) - 0.25rem);\n\n`;
 
-    // Add Gwind custom spacing to the theme while keeping Tailwind defaults
-    theme += `  --spacing-gw-2: var(--space-2);\n`;
-    theme += `  --spacing-gw-4: var(--space-4);\n`;
-    theme += `  --spacing-gw-8: var(--space-8);\n`;
-    theme += `  --spacing-gw-16: var(--space-16);\n`;
-    theme += `  --spacing-gw-24: var(--space-24);\n`;
-    theme += `  --spacing-gw-32: var(--space-32);\n`;
-    theme += `  --spacing-gw-40: var(--space-40);\n`;
-    theme += `  --spacing-gw-48: var(--space-48);\n`;
-    theme += `  --spacing-gw-64: var(--space-64);\n`;
-    theme += `  --spacing-gw-80: var(--space-80);\n`;
-    theme += `  --spacing-gw-120: var(--space-120);\n\n`;
+    theme += `  --breakpoint-sm: 18.75rem;\n`;
+    theme += `  --breakpoint-mobile: 22.5rem;\n`;
+    theme += `  --breakpoint-tablet: 40rem;\n`;
+    theme += `  --breakpoint-desktop: 64.25rem;\n\n`;
 
-    theme += `  --text-omega: 0.75rem;\n`;
-    theme += `  --text-omega--line-height: calc(1rem / 0.75rem);\n`;
-    theme += `  --text-sigma: 0.875rem;\n`;
-    theme += `  --text-sigma--line-height: calc(1.25rem / 0.875rem);\n`;
-    theme += `  --text-omicron: 1rem;\n`;
-    theme += `  --text-omicron--line-height: calc(1.5rem / 1rem);\n`;
+    Object.keys(spacing).forEach((name) => {
+        theme += `  --spacing-gw-${name}: var(--space-${name});\n`;
+    });
+    theme += `\n`;
+
+    Object.entries(typography).forEach(([name, { token }]) => {
+        theme += `  --text-${name}: var(--${token});\n`;
+        theme += `  --text-${name}--line-height: calc(var(--${token}-line-height) / var(--${token}));\n`;
+    });
+
+    theme += `\n`;
+    theme += `  --drop-shadow-1: var(--shadow-drop-1);\n`;
+    theme += `  --drop-shadow-2: var(--shadow-drop-2);\n`;
+    theme += `  --animate-accordion-down: accordion-down 0.2s ease-out;\n`;
+    theme += `  --animate-accordion-up: accordion-up 0.2s ease-out;\n`;
+    theme += `  --animate-reverse-spin: reverse-spin 1s linear infinite;\n\n`;
+
+    theme += `  @keyframes accordion-down {\n`;
+    theme += `    from { height: 0; }\n`;
+    theme += `    to { height: var(--radix-accordion-content-height); }\n`;
+    theme += `  }\n`;
+    theme += `  @keyframes accordion-up {\n`;
+    theme += `    from { height: var(--radix-accordion-content-height); }\n`;
+    theme += `    to { height: 0; }\n`;
+    theme += `  }\n`;
+    theme += `  @keyframes reverse-spin {\n`;
+    theme += `    from { transform: rotate(360deg); }\n`;
+    theme += `  }\n`;
     theme += `}\n`;
     return theme;
 };

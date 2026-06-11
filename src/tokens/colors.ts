@@ -106,7 +106,7 @@ const gwindThemeColors = {
         200: "var(--black-200)",
         100: "var(--black-100)"
     },
-    white: "var(--text-white)"
+    white: "var(--white)"
 }
 
 export default gwindThemeColors
